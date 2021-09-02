@@ -1,6 +1,7 @@
 import string from "./css.js";
 // debugger
 console.log(string)
+
 let n = 1
 const code = document.querySelector('#code')
 const style = document.querySelector('#style')
