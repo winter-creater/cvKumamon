@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"
+    />
+    <title>画一只熊本熊给你看</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      #code {
+        /* border: 1px solid red; */
+        width: 100%;
+        height: 50vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        /* background-color: rgba(243, 240, 240, 0.945); */
+        overflow-y: auto;
+      }
+      #code::-webkit-scrollbar {
+        display: none;
+      }
+      #board {
+        /* border: 2px solid green; */
+        background-color: LightPink;
+        width: 100%;
+        height: 50vh;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+      }
+      #buttons {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        right: 0;
+        top: 0;
+        margin-right: 30px;
+        margin-top: 15px;
+      }
+      #buttons > button {
+        margin-bottom: 15px;
+        padding: 4px 8px;
+      }
+      /*  熊本熊样式*/
+      #kunamon {
+        position: relative;
+        top: 10px;
+      }
+      .body {
+        background-color: LightPink;
+
+        border-top-left-radius: 160px 150px;
+        border-top-right-radius: 160px 150px;
+        position: absolute;
+        left: 50%;
+        top: 150px;
+        transform: translate(-50%, -50%);
+      }
+      .eye {
+        position: absolute;
+        left: 50%;
+        top: 90px;
+        margin-left: -32px;
+      }
+      .eye::before {
+        content: "";
+        display: block;
+
+        border-radius: 5px/12px;
+        position: absolute;
+        left: 50%;
+        margin-left: -5px;
+        top: 50%;
+        margin-top: -12px;
+      }
+      @keyframes blink {
+        0% {
+          transform: rotateX(0deg);
+        }
+        100% {
+          transform: rotateX(180deg);
+        }
+      }
+      .eyebrow {
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        top: 56px;
+        margin-left: -18px;
+      }
+      .eyebrow::before {
+        content: "";
+        display: block;
+
+        border-radius: 50%;
+        margin-top: 6px;
+      }
+      .face {
+        border-radius: 50%;
+
+        position: absolute;
+        left: 50%;
+        top: 150px;
+        margin-left: -40px;
+      }
+      .ear {
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        margin-left: -30px;
+        top: 40px;
+      }
+      .ear::before {
+        content: "";
+        display: block;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        margin-left: -19px;
+        top: 14px;
+      }
+      .noseAndMouse {
+        border-radius: 80px/60px;
+        position: absolute;
+        left: 50%;
+        margin-left: -80px;
+        top: 150px;
+      }
+      .noseAndMouse .nose {
+        border-radius: 50px/24px 24px 48px 48px;
+        position: absolute;
+        left: 50%;
+        margin-left: -25px;
+        top: 5px;
+      }
+      .noseAndMouse .mouse {
+        top: 50px;
+        border-radius: 70px/10px 10px 30px 30px;
+        position: absolute;
+        left: 50%;
+        margin-left: -70px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="code"></div>
+    <style id="style"></style>
+    <div id="buttons">
+      <button id="btnSlow">慢速</button>
+      <button id="btnFast">快速</button>
+    </div>
+    <div id="board">
+      <div class="container">
+        <div id="kunamon">
+          <div class="ear right"></div>
+          <div class="ear left"></div>
+
+          <div class="body"></div>
+
+          <div class="eyebrow right"></div>
+          <div class="eyebrow left"></div>
+          <div class="eye right"></div>
+          <div class="eye left"></div>
+
+          <div class="face right"></div>
+          <div class="face left"></div>
+
+          <div class="noseAndMouse">
+            <div class="nose"></div>
+            <div class="mouse"></div>
+          </div>
+        </div>
+      </div>
+      <script src="main.js"></script>
+    </div>
+    <script src="test.js"></script>
+  </body>
+</html>
